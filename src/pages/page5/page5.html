@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar class="navv">
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="card-background-page">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+<div *ngFor="let post of stream">
+<ion-card>
+  <div class="card-title">{{post.title}}</div>
+    <img src="assets/imgs/strem.png"/>
+    <!-- <div class="card-title">{{post.title}}</div> -->
+    <div class="card-subtitle"><audio controls>
+        <source [src]="post.enclosure.link" type="audio/mpeg">
+      </audio></div>
+  </ion-card>
+  </div>
+      
+
+</ion-content>

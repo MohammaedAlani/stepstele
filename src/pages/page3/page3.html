@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar class="navv">
+      
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content class="home">   
+      <ion-refresher (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+          </ion-refresher-content>
+        </ion-refresher>  
+          <div  *ngFor="let post of posts;  let i = index;">
+          <ion-card class="test">
+            <img  class="imagess" [src]="post.enclosure.link"/>
+            <div class="con">
+          <br>
+          <div text-center> {{post.title}}</div>
+          <ion-item text-nowrap class="dis" text-right>
+            {{post.description}}
+          </ion-item>
+            <div class="share">
+                <button ion-button icon-only  outline (click)="regularShare(i)" color="danger" clear>
+              <ion-icon class="share-icon" name="share"></ion-icon>
+            </button>
+              
+                <button ion-button icon-only  outline (click)="whatsappShare(i)" color="danger" clear>
+              <ion-icon class="share-icon" name="logo-whatsapp"></ion-icon>
+            </button>
+              
+                <button ion-button icon-only  outline (click)="facebookShare(i)" color="danger" clear>
+              <ion-icon  class="share-icon" name="logo-facebook"></ion-icon>
+            </button>
+              
+                <button ion-button icon-only  outline (click)="twitterShare(i)" color="danger" clear>
+              <ion-icon class="share-icon" name="logo-twitter"></ion-icon>
+            </button>
+         
+            <a [href]="post.link"> <button color="danger" small ion-button icon-only clear outline>
+              <ion-icon class="share-icon" name="ios-link"></ion-icon>
+            </button></a>
+          </div>
+            <br>
+            <div style="font-size: 1rem">{{post.pubDate}}</div>
+          </div>
+          </ion-card>
+          </div>
+   
+  </ion-content>    
+  

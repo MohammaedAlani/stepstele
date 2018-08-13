@@ -1,0 +1,30 @@
+page-page5 {
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 0.5%;
+          font-size: 1em;
+          width: 100%;
+          font-weight: bold;
+          color: #ff4c4c;
+        }
+      
+        .card-subtitle {
+          position: absolute;
+          top: 85%;
+          width: 100%;
+        }
+      
+      }
+      .navv{
+        min-height: 1px;
+        background-color: #fff;
+      }    
+
+}
